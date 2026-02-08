@@ -14,7 +14,7 @@ Find commercial airports within a specified radius of any location worldwide.
 
 ## Live Demo
 
-Visit: `https://YOUR_USERNAME.github.io/airport-finder/`
+Visit: `https://doberkofler.github.io/airport-finder/`
 
 ## Technologies
 
@@ -27,7 +27,7 @@ Visit: `https://YOUR_USERNAME.github.io/airport-finder/`
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/airport-finder.git
+   git clone https://github.com/doberkofler/airport-finder.git
    cd airport-finder
    ```
 
@@ -50,7 +50,7 @@ Visit: `https://YOUR_USERNAME.github.io/airport-finder/`
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin git@github.com:YOUR_USERNAME/airport-finder.git
+   git remote add origin git@github.com:doberkofler/airport-finder.git
    git push -u origin main
    ```
 
@@ -60,7 +60,7 @@ Visit: `https://YOUR_USERNAME.github.io/airport-finder/`
    - Branch: main, root folder
    - Save
 
-4. Site will be live at `https://YOUR_USERNAME.github.io/airport-finder/`
+4. Site will be live at `https://doberkofler.github.io/airport-finder/`
 
 ## Project Structure
 

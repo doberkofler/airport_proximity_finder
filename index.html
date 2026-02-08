@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Airport Proximity Finder</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="airport-finder.css">
+</head>
+<body>
+	<div class="bg-gradient"></div>
+	
+	<div class="container">
+		<header>
+			<h1>✈️ Airport Proximity Finder</h1>
+			<p class="subtitle">Discover commercial airports within your range</p>
+		</header>
+
+		<div class="search-card">
+			<div class="input-group">
+				<label for="location">Location</label>
+				<div class="input-wrapper">
+					<input 
+						type="text" 
+						id="location" 
+						placeholder="Enter city or place name..."
+						autocomplete="off"
+					>
+					<button type="button" class="clear-btn" id="clearLocation" title="Clear location">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<line x1="18" y1="6" x2="6" y2="18"></line>
+							<line x1="6" y1="6" x2="18" y2="18"></line>
+						</svg>
+					</button>
+				</div>
+				<div class="location-suggestions" id="suggestions"></div>
+			</div>
+
+			<div class="input-group">
+				<label>Distance Calculation</label>
+				<div class="toggle-group">
+					<button type="button" class="toggle-btn active" data-mode="straight">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<line x1="5" y1="12" x2="19" y2="12"></line>
+							<polyline points="12 5 19 12 12 19"></polyline>
+						</svg>
+						Straight-line
+					</button>
+					<button type="button" class="toggle-btn" data-mode="driving">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M5 17h14v-7H5v7z"></path>
+							<circle cx="7.5" cy="17" r="1.5"></circle>
+							<circle cx="16.5" cy="17" r="1.5"></circle>
+							<path d="M5 17H3v-7l2-5h14l2 5v7h-2"></path>
+						</svg>
+						Driving
+					</button>
+				</div>
+				<div class="distance-info">
+					<span id="distanceMode">Straight-line (Haversine formula)</span>
+				</div>
+			</div>
+
+			<div class="input-group">
+				<label for="range">Search Radius</label>
+				<input 
+					type="range" 
+					id="range" 
+					min="10" 
+					max="500" 
+					value="100" 
+					step="10"
+				>
+				<div class="range-display">
+					<span class="range-value"><span id="rangeValue">100</span> km</span>
+				</div>
+			</div>
+
+			<button id="searchBtn">Search Airports</button>
+			
+			<div id="error"></div>
+		</div>
+
+		<div class="results" id="results">
+			<div class="results-header">
+				<h2 class="results-title">Nearby Airports</h2>
+				<span class="results-count" id="resultsCount">0 found</span>
+			</div>
+			<div id="airportList"></div>
+		</div>
+	</div>
+
+	<script src="airport-finder.js"></script>
+</body>
+</html>
